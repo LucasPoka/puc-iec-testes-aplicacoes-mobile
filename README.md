@@ -9,13 +9,21 @@ Repositório público com **labs, exercícios, repos starter de aulas e materiai
 
 ## 📱 App de referência oficial — TestesQAMobile
 
+<<<<<<< Updated upstream
 App educacional desenvolvido pelo prof especificamente pra esta disciplina. **35 exercícios em 12 categorias de teste** (funcional, usabilidade, UI, compatibilidade, performance, conectividade, instalação, interrupção, localização, gestos, acessibilidade, segurança).
+=======
+App educacional desenvolvido pelo prof especificamente pra esta disciplina. **35 exercícios em 12 categorias de teste** com bugs propositalmente colocados.
+>>>>>>> Stashed changes
 
 - 🍎 **App Store:** https://apps.apple.com/br/app/testes-qa-mobile/id6755933674
 - 🤖 **Play Store:** https://play.google.com/store/apps/details?id=com.apptestesmobile
 - 📦 **Bundle ID:** `com.apptestesmobile`
 
+<<<<<<< Updated upstream
 **Como acessar:** instale via lojas (gratuito). Use como alvo de **todas** as suítes Maestro/Espresso/XCUITest da disciplina. Já contém bugs **propositalmente colocados** pra exercitar detecção e documentação.
+=======
+Instale via lojas (gratuito). Use como alvo de **todas** as suítes Maestro/Espresso/XCUITest da disciplina.
+>>>>>>> Stashed changes
 
 ## Calendário
 
