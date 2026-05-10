@@ -70,6 +70,13 @@
 - Healenium — healenium.io.
 - Applitools — *Visual AI Whitepaper* (2024).
 
+## App de referência oficial da disciplina
+
+- **TestesQAMobile** (Matias, J. S. M., 2026). App educacional com 35 exercícios em 12 categorias de teste. Publicado em App Store e Play Store.
+  - App Store: https://apps.apple.com/br/app/testes-qa-mobile/id6755933674
+  - Play Store: https://play.google.com/store/apps/details?id=com.apptestesmobile
+  - Bundle: `com.apptestesmobile`
+
 ## Onde acessar
 
 - **PUC Periódicos / CAPES:** IEEE Xplore, ACM Digital Library, Springer, ScienceDirect.
