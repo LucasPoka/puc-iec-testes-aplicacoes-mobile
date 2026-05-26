@@ -1,0 +1,29 @@
+services:
+  # Container Maestro CLI pronto pra rodar flows YAML.
+  # Uso típico:
+  #   docker-compose run --rm maestro test /flows/01-launch.yaml
+  #   docker-compose run --rm maestro check /flows/
+  #
+  # Em Linux com emulator no host: network_mode: host alcança emulator via adb.
+  # Em Mac/Windows: limitações de USB passthrough — preferir parse-only.
+  maestro:
+    build: .
+    image: puc-iec-tam/maestro:local
+    volumes:
+      # Monta pasta flows/ do projeto starter como /flows dentro do container
+      - ../exercicios/04-suite-maestro-cross-platform/starter/flows:/flows:ro
+      # Caso aluno queira rodar próprios flows, mapear:
+      # - ./meus-flows:/flows:ro
+    network_mode: host  # Linux: alcança emulator-5554 via adb
+    environment:
+      MAESTRO_CLI_NO_ANALYTICS: "true"
+
+  # Variante parse-only (sem emulator) pra CI / smoke tests
+  maestro-check:
+    build: .
+    image: puc-iec-tam/maestro:local
+    volumes:
+      - ../exercicios/04-suite-maestro-cross-platform/starter/flows:/flows:ro
+    command: ["check", "/flows/"]
+    environment:
+      MAESTRO_CLI_NO_ANALYTICS: "true"

@@ -1,0 +1,58 @@
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+._*
+.Spotlight-V100
+.Trashes
+
+# Node
+node_modules/
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+.pnpm-store/
+
+# Build artifacts
+dist/
+build/
+out/
+.next/
+.expo/
+.expo-shared/
+*.log
+coverage/
+
+# Env / secrets
+.env
+.env.local
+.env.*.local
+*.key
+*.pem
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+.cursor/
+
+# Mobile
+ios/Pods/
+ios/build/
+DerivedData/
+android/.gradle/
+android/build/
+android/app/build/
+*.xcuserstate
+*.xcworkspace/xcuserdata/
+
+# Test artifacts
+.maestro/
+test-results/
+allure-results/
+
+# Claude Code
+.claude/
