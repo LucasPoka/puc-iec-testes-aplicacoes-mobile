@@ -1,35 +1,34 @@
-# Atividade 2 — Setup + Suíte Unitária (10 pts)
+# Atividade 2 — Suíte Unitária sobre App RN (10 pts)
 
-> **TAM** | **Aula:** 2 (28/05/2026) | **Auto-grade:** ✅
+> **TAM** | **Aula:** 2 (28/05/2026)
 
 ## Objetivo
 
-Setup ambiente iOS + Android funcional + suíte unitária com Jest cobrindo data + domain layers (≥ 70% cobertura).
+Escrever uma **suíte de testes unitários (Jest)** sobre um app React Native que já vem implementado — o mesmo app TMDB da disciplina de Arquitetura. Foco do QA: testar código existente, não implementar feature.
 
-## Estrutura
+## Por onde começar
 
+1. **Enunciado completo:** [`enunciado.md`](./enunciado.md)
+2. **Guia passo a passo:** [`guia-passo-a-passo.md`](./guia-passo-a-passo.md)
+3. **App + scaffolds:** [`starter/`](./starter/) — leia o `README.md` do starter
+4. **Modelo de README de entrega:** [`template-relatorio.md`](./template-relatorio.md)
+
+```bash
+cd starter
+npm install
+npm test     # posterUrl já passa verde; o resto é seu
 ```
-exercicios/02-setup-suite-unitaria/aluno-<github-username>/
-├── package.json                # Jest configurado
-├── src/
-│   ├── data/__tests__/         # ≥ 5 testes
-│   └── domain/__tests__/       # ≥ 5 testes
-├── android/                     # build.gradle com test deps
-├── ios/                         # Xcode project com test target
-└── README.md
-```
 
-## Critérios (10 pts)
+## O que entregar
 
 | # | Critério | Peso |
 |---|----------|------|
-| 1 | Jest configurado (package.json ou jest.config) | 2 |
-| 2 | Mín 5 *.test/*.spec | 3 |
-| 3 | Cobertura configurada | 2 |
-| 4 | Estrutura iOS | 1 |
-| 5 | Estrutura Android | 1 |
-| 6 | README | 1 |
+| 1 | `npm install && npm test` roda em < 15min (eliminatório) | 2 |
+| 2 | Testes `favoritesStore` (6 verdes) | 3 |
+| 3 | Testes `counterStore` (3 verdes) | 1 |
+| 4 | Testes `isTokenError` (5 verdes) | 2 |
+| 5 | Cobertura ≥ 70% em `src/store` e `src/utils` | 2 |
 
-## Vídeo
+**Bônus:** mock de query (`jest.mock`), CI verde, testes parametrizados (`it.each`).
 
-`npm test -- --coverage` rodando + relatório de cobertura HTML.
+> Você trabalha em `starter/__tests__/`. **Não comite `node_modules/` nem `coverage/`.**
