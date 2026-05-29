@@ -12,15 +12,33 @@ beforeEach(() => {
   useCounterStore.setState({ count: 0 });
 });
 
-// Dica: const s = () => useCounterStore.getState();  (count começa em 0 por causa do beforeEach)
+// Atalho (count começa em 0 por causa do beforeEach):
+const s = () => useCounterStore.getState();
+
+// Os 3 são FÁCEIS: a ação já está escrita — complete só o expect (começam vermelhos → verde).
 
 describe('counterStore', () => {
-  // Act: s().increment()  ·  Assert: expect(s().count).toBe(1)
-  it.todo('increment soma 1 ao count');
+  it('increment soma 1 ao count', () => {
+    // Act
+    s().increment();
+    // Assert — complete:
+    expect(s().count).toBe(/* TODO */);
+  });
 
-  // Act: s().decrement()  ·  Assert: expect(s().count).toBe(-1)
-  it.todo('decrement subtrai 1 do count');
+  it('decrement subtrai 1 do count', () => {
+    // Act
+    s().decrement();
+    // Assert — complete:
+    expect(s().count).toBe(/* TODO */);
+  });
 
-  // Arrange: s().increment(); s().increment()  ·  Act: s().reset()  ·  Assert: expect(s().count).toBe(0)
-  it.todo('reset volta o count pra 0');
+  it('reset volta o count pra 0', () => {
+    // Arrange
+    s().increment();
+    s().increment();
+    // Act
+    s().reset();
+    // Assert — complete:
+    expect(s().count).toBe(/* TODO */);
+  });
 });

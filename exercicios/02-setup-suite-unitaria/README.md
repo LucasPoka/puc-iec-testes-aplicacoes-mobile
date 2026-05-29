@@ -16,55 +16,60 @@ Escrever uma **suíte de testes unitários (Jest + RNTL)** sobre um app React Na
 ```bash
 cd starter
 npm install
-npm test     # posterUrl já passa verde (3 testes); o resto é seu
+npm test     # 3 verdes (posterUrl) + alguns VERMELHOS (complete o expect) + alguns todo (desafios)
 ```
 
-## Onde escrever cada teste (links diretos)
+## Como o exercício está montado (2 níveis)
 
-Cada link abre o arquivo **na linha exata** — o comentário-guia (Arrange/Act/Assert) fica logo acima do `it.todo`. Troque `it.todo('...')` por `it('...', () => { ... })`.
+- **Fáceis** ✅ — já são `it()` com **Arrange/Act prontos**; você completa **só o `expect`**. Começam **vermelhos** → ficam verdes quando você preenche o valor esperado.
+- **Desafios** 🔴 — ainda `it.todo`; você escreve o teste **inteiro** a partir da dica logo acima.
 
-> 📌 **Modelo resolvido:** [`posterUrl.test.ts`](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/posterUrl.test.ts#L8) — leia antes de começar.
+> 📌 **Modelo 100% resolvido:** [`posterUrl.test.ts`](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/posterUrl.test.ts#L8) — leia antes de começar.
 
-### 1. `favoritesStore.test.ts` — store Zustand (6 testes)
+## Onde escrever cada teste (links diretos por linha)
 
-| Teste | Abrir no ponto |
+### 1. `favoritesStore.test.ts` — store Zustand
+
+| Teste | Nível | Abrir |
+|---|---|---|
+| `add(id)` adiciona o id | ✅ fácil | [linha 27](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L27) |
+| `remove(id)` tira o id | ✅ fácil | [linha 34](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L34) |
+| `isFavorite(id)` reflete estado | ✅ fácil | [linha 43](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L43) |
+| `clear()` esvazia | ✅ fácil | [linha 51](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L51) |
+| `add(id)` não duplica | 🔴 desafio | [linha 63](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L63) |
+| `toggle(id)` adiciona/remove | 🔴 desafio | [linha 67](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L67) |
+
+### 2. `counterStore.test.ts` — store Zustand (todos ✅ fáceis)
+
+| Teste | Abrir |
 |---|---|
-| `add(id)` adiciona o id | [linha 25](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L25) |
-| `add(id)` não duplica | [linha 28](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L28) |
-| `remove(id)` tira o id | [linha 31](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L31) |
-| `toggle(id)` adiciona/remove | [linha 35](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L35) |
-| `isFavorite(id)` reflete estado | [linha 38](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L38) |
-| `clear()` esvazia | [linha 41](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/favoritesStore.test.ts#L41) |
+| `increment` soma 1 | [linha 21](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L21) |
+| `decrement` subtrai 1 | [linha 28](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L28) |
+| `reset` volta pra 0 | [linha 35](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L35) |
 
-### 2. `MovieCard.test.tsx` — teste de tela (RNTL) ⭐
+### 3. `api.test.ts` — `isTokenError` (todos ✅ fáceis)
 
-| Teste | Abrir no ponto |
+| Teste | Abrir |
 |---|---|
-| renderiza o título | [linha 35](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/MovieCard.test.tsx#L35) |
+| `true` pra `status 401` | [linha 19](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L19) |
+| `true` pra flag `isTokenError` | [linha 23](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L23) |
+| `true` pra `TMDB_TOKEN_MISSING` | [linha 27](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L27) |
+| `false` pra `null` | [linha 31](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L31) |
+| `false` pra erro genérico (500) | [linha 35](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L35) |
+
+### 4. `MovieCard.test.tsx` — teste de tela (RNTL) 🔴 **parte mais difícil**
+
+Escreva o corpo inteiro (render + query + assert). Mock de navegação já vem pronto.
+
+| Teste | Abrir |
+|---|---|
+| renderiza o título | [linha 36](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/MovieCard.test.tsx#L36) |
 | renderiza a nota (`⭐ 8.7`) | [linha 39](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/MovieCard.test.tsx#L39) |
 | toque no card navega | [linha 43](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/MovieCard.test.tsx#L43) |
 
-### 3. `api.test.ts` — `isTokenError` (5 testes)
-
-| Teste | Abrir no ponto |
-|---|---|
-| `true` pra `status 401` | [linha 20](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L20) |
-| `true` pra flag `isTokenError` | [linha 23](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L23) |
-| `true` pra `TMDB_TOKEN_MISSING` | [linha 26](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L26) |
-| `false` pra `null` | [linha 29](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L29) |
-| `false` pra erro genérico (500) | [linha 32](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/api.test.ts#L32) |
-
-### 4. `counterStore.test.ts` — store Zustand (3 testes)
-
-| Teste | Abrir no ponto |
-|---|---|
-| `increment` soma 1 | [linha 19](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L19) |
-| `decrement` subtrai 1 | [linha 22](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L22) |
-| `reset` volta pra 0 | [linha 25](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/counterStore.test.ts#L25) |
-
 ### 🎁 Bônus — `popularMovies.test.ts` (mock de dependência)
 
-| Teste | Abrir no ponto |
+| Teste | Abrir |
 |---|---|
 | chama `/movie/popular` com a page | [linha 22](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/popularMovies.test.ts#L22) |
 | devolve o `data` da resposta | [linha 23](https://github.com/jacksonsmith/puc-iec-testes-aplicacoes-mobile/blob/main/exercicios/02-setup-suite-unitaria/starter/__tests__/popularMovies.test.ts#L23) |

@@ -16,27 +16,53 @@ beforeEach(() => {
   useFavoritesStore.setState({ ids: [] });
 });
 
-// Dica pra todos: crie um atalho no topo do describe →  const s = () => useFavoritesStore.getState();
-// Padrão de cada teste = Arrange (prepara) · Act (executa a action) · Assert (expect).
-// Troque o it.todo('...') por it('...', () => { ...seu código... }).
+// Atalho pra ler estado e actions fora de componente React:
+const s = () => useFavoritesStore.getState();
+
+// FÁCEIS: a preparação (Arrange) e a ação (Act) já estão escritas — você completa SÓ o expect.
+//         Começam VERMELHOS; preencha o valor esperado pra virar verde.
+// 🔴 DESAFIOS: ainda it.todo — escreva o teste inteiro a partir da dica.
 
 describe('favoritesStore', () => {
-  // Act: s().add(1)  ·  Assert: expect(s().ids).toEqual([1])
-  it.todo('add(id) adiciona o id à lista');
+  it('add(id) adiciona o id à lista', () => {
+    // Act
+    s().add(1);
+    // Assert — complete:
+    expect(s().ids).toEqual(/* TODO: qual array? */);
+  });
 
-  // Act: s().add(1); s().add(1)  ·  Assert: expect(s().ids).toEqual([1])  (continua só um)
+  it('remove(id) tira o id da lista', () => {
+    // Arrange
+    s().add(1);
+    // Act
+    s().remove(1);
+    // Assert — complete:
+    expect(s().ids).toEqual(/* TODO */);
+  });
+
+  it('isFavorite(id) reflete o estado atual', () => {
+    // Arrange
+    s().add(1);
+    // Assert — complete (true ou false?):
+    expect(s().isFavorite(1)).toBe(/* TODO */);
+    expect(s().isFavorite(99)).toBe(/* TODO */);
+  });
+
+  it('clear() esvazia a lista', () => {
+    // Arrange
+    s().add(1);
+    s().add(2);
+    // Act
+    s().clear();
+    // Assert — complete:
+    expect(s().ids).toEqual(/* TODO */);
+  });
+
+  // 🔴 DESAFIO: chamar add(1) DUAS vezes não pode duplicar (ids continua [1]).
+  //    Escreva Act + Assert do zero.
   it.todo('add(id) não duplica id já existente');
 
-  // Arrange: s().add(1)  ·  Act: s().remove(1)  ·  Assert: expect(s().ids).toEqual([])
-  it.todo('remove(id) tira o id da lista');
-
-  // toggle(1) na lista vazia ADICIONA; chamar toggle(1) de novo REMOVE.
-  // São 2 verificações: expect após o 1º toggle = [1]; após o 2º = [].
+  // 🔴 DESAFIO: toggle(1) na lista vazia ADICIONA; chamar toggle(1) de novo REMOVE.
+  //    Faça as 2 verificações (após o 1º toggle = [1]; após o 2º = []).
   it.todo('toggle(id) adiciona se ausente e remove se presente');
-
-  // Arrange: s().add(1)  ·  Assert: expect(s().isFavorite(1)).toBe(true) e isFavorite(99) toBe(false)
-  it.todo('isFavorite(id) reflete o estado atual');
-
-  // Arrange: add(1); add(2)  ·  Act: s().clear()  ·  Assert: expect(s().ids).toEqual([])
-  it.todo('clear() esvazia a lista');
 });

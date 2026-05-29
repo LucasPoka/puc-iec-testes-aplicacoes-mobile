@@ -46,7 +46,7 @@ __tests__/                    ← SUA ENTREGA (Jest + RNTL)
 git clone https://github.com/SEU-USUARIO/puc-iec-testes-aplicacoes-mobile.git
 cd puc-iec-testes-aplicacoes-mobile/exercicios/02-setup-suite-unitaria/starter
 npm install
-npm test          # posterUrl já passa verde (3 testes); o resto é it.todo
+npm test          # 3 verdes (posterUrl) + alguns vermelhos (complete o expect) + desafios (todo)
 ```
 
 > **Os testes (incl. RNTL de tela) não precisam de simulador, token nem rede.** Rodam só com Node.

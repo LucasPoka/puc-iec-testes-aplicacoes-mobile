@@ -12,22 +12,27 @@
 
 import { isTokenError } from '../src/services/api';
 
-// Função pura: monte o objeto de erro de entrada e verifique o booleano de saída.
-// Troque o it.todo('...') por it('...', () => { expect(isTokenError(ENTRADA)).toBe(ESPERADO); }).
+// Função pura: a entrada (objeto de erro) já está montada — complete só o esperado (true/false).
+// Os 5 são FÁCEIS e começam vermelhos → preencha o toBe() pra virar verde.
 
 describe('isTokenError', () => {
-  // Entrada: { response: { status: 401 } }  ·  Esperado: true
-  it.todo('retorna true pra erro com response.status 401');
+  it('retorna true pra erro com response.status 401', () => {
+    expect(isTokenError({ response: { status: 401 } })).toBe(/* TODO: true ou false? */);
+  });
 
-  // Entrada: { isTokenError: true }  ·  Esperado: true
-  it.todo('retorna true pra erro com flag isTokenError');
+  it('retorna true pra erro com flag isTokenError', () => {
+    expect(isTokenError({ isTokenError: true })).toBe(/* TODO */);
+  });
 
-  // Entrada: new Error('TMDB_TOKEN_MISSING: ...')  ·  Esperado: true
-  it.todo('retorna true pra erro TMDB_TOKEN_MISSING');
+  it('retorna true pra erro TMDB_TOKEN_MISSING', () => {
+    expect(isTokenError(new Error('TMDB_TOKEN_MISSING: configure o token'))).toBe(/* TODO */);
+  });
 
-  // Entrada: null  ·  Esperado: false
-  it.todo('retorna false pra null');
+  it('retorna false pra null', () => {
+    expect(isTokenError(null)).toBe(/* TODO */);
+  });
 
-  // Entrada: { response: { status: 500 } }  ·  Esperado: false
-  it.todo('retorna false pra erro genérico (status 500)');
+  it('retorna false pra erro genérico (status 500)', () => {
+    expect(isTokenError({ response: { status: 500 } })).toBe(/* TODO */);
+  });
 });

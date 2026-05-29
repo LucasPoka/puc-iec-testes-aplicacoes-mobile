@@ -27,18 +27,18 @@ const movie = {
 
 beforeEach(() => mockNavigate.mockClear());
 
-// O objeto `movie` (acima) e o mock de navegação já estão prontos. Em cada teste:
-// 1) render(<MovieCard movie={movie} />);  2) consulte com screen.getBy...;  3) expect(...).
+// 🔴 PARTE MAIS DIFÍCIL — teste de tela. Aqui você escreve o corpo INTEIRO (sem fill-in).
+// O objeto `movie` e o mock de navegação já estão prontos acima. Em cada teste:
+//   1) render(<MovieCard movie={movie} />)  2) consulta screen.getBy...  3) expect(...)
 
 describe('MovieCard', () => {
-  // Depois do render: expect(screen.getByText('Matrix')).toBeTruthy();
+  // Dica: depois do render → expect(screen.getByText('Matrix')).toBeTruthy();
   it.todo('renderiza o título do filme');
 
-  // A nota aparece formatada como '⭐ 8.7' (vote_average.toFixed(1)).
-  // expect(screen.getByText('⭐ 8.7')).toBeTruthy();
+  // Dica: a nota aparece como '⭐ 8.7' (vote_average.toFixed(1)) → screen.getByText('⭐ 8.7').
   it.todo('renderiza a nota (⭐ 8.7)');
 
-  // Simule o toque: fireEvent.press(screen.getByText('Matrix'));
-  // Verifique a navegação: expect(mockNavigate).toHaveBeenCalledWith('Detail', { id: 42, title: 'Matrix' });
+  // Dica: fireEvent.press(screen.getByText('Matrix'));
+  //   expect(mockNavigate).toHaveBeenCalledWith('Detail', { id: 42, title: 'Matrix' });
   it.todo('navega pro detalhe ao tocar no card');
 });

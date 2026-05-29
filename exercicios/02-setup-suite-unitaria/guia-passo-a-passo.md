@@ -20,8 +20,10 @@ Saída esperada:
 
 ```
 PASS  __tests__/posterUrl.test.ts
-Tests:  16 todo, 3 passed, 19 total
+Tests:  3 passed, 12 failed, 7 todo, 22 total
 ```
+
+> **Vermelho é esperado no começo.** Os testes fáceis já vêm com Arrange/Act prontos — você completa só o `expect` pra virar verde. Os 🔴 desafios estão como `todo` (escreva o teste inteiro a partir da dica).
 
 ---
 
