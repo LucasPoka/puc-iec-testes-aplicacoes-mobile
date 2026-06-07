@@ -1,7 +1,7 @@
 name: Grade — Atividade 2 (Suíte Unitária RN)
 
 on:
-  pull_request:        # qualquer PR dispara; o job descobre a pasta de entrega pelo diff
+  pull_request_target:  # PRs de forks rodam sem aprovação manual
 
 permissions:
   pull-requests: write
@@ -14,6 +14,8 @@ jobs:
 
     steps:
       - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha || github.sha }}
 
       # Descobre a pasta de entrega a partir dos arquivos do PR.
       # Qualquer pasta sob exercicios/02-setup-suite-unitaria/ (exceto starter/exemplo-resolvido).
