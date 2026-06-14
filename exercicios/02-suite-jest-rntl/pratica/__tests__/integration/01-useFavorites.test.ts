@@ -19,9 +19,9 @@ import { useFavoritesStore } from '@/store/favoritesStore';
 beforeEach(() => useFavoritesStore.setState({ ids: [] }));
 
 describe('useFavorites (renderHook)', () => {
-  it.todo('1. começa sem favoritos (count === 0)');   // 🧑‍🏫 em aula
+  it.todo('1. começa sem nenhum favorito (count 0)');   // 🧑‍🏫 em aula
 
-  it.todo('2. toggle adiciona e depois remove — count volta a 0');   // 🧑‍💻 aluno
+  it.todo('2. favoritar e desfavoritar volta a zero (toggle)');   // 🧑‍💻 aluno
 
-  it.todo('3. isFavorite reflete o estado após add(id)');   // 🧑‍💻 aluno
+  it.todo('3. sei se está favoritado depois de favoritar (isFavorite)');   // 🧑‍💻 aluno
 });

@@ -26,14 +26,14 @@ const s = () => useFavoritesStore.getState();
 // 🔴 DESAFIOS (5-6): ainda it.todo — escreva o teste inteiro a partir da dica.
 
 describe('favoritesStore', () => {
-  it('1. add(id) adiciona o id à lista', () => {   // 🧑‍🏫 em aula
+  it('1. favoritar adiciona o filme à lista (add)', () => {   // 🧑‍🏫 em aula
     // Act
     s().add(1);
     // Assert — complete:
     expect(s().ids).toEqual(/* TODO: qual array? */);
   });
 
-  it('2. remove(id) tira o id da lista', () => {   // 🧑‍🏫 em aula
+  it('2. desfavoritar tira o filme da lista (remove)', () => {   // 🧑‍🏫 em aula
     // Arrange
     s().add(1);
     // Act
@@ -42,7 +42,7 @@ describe('favoritesStore', () => {
     expect(s().ids).toEqual(/* TODO */);
   });
 
-  it('3. isFavorite(id) reflete o estado atual', () => {   // 🧑‍💻 aluno
+  it('3. sei se um filme está favoritado (isFavorite)', () => {   // 🧑‍💻 aluno
     // Arrange
     s().add(1);
     // Assert — complete (true ou false?):
@@ -50,7 +50,7 @@ describe('favoritesStore', () => {
     expect(s().isFavorite(99)).toBe(/* TODO */);
   });
 
-  it('4. clear() esvazia a lista', () => {   // 🧑‍💻 aluno
+  it('4. limpar esvazia todos os favoritos (clear)', () => {   // 🧑‍💻 aluno
     // Arrange
     s().add(1);
     s().add(2);
@@ -62,9 +62,9 @@ describe('favoritesStore', () => {
 
   // 🔴 DESAFIO: chamar add(1) DUAS vezes não pode duplicar (ids continua [1]).
   //    Escreva Act + Assert do zero.
-  it.todo('5. add(id) não duplica id já existente');   // 🧑‍💻 aluno
+  it.todo('5. favoritar o mesmo filme 2× não duplica (add)');   // 🧑‍💻 aluno
 
   // 🔴 DESAFIO: toggle(1) na lista vazia ADICIONA; chamar toggle(1) de novo REMOVE.
   //    Faça as 2 verificações (após o 1º toggle = [1]; após o 2º = []).
-  it.todo('6. toggle(id) adiciona se ausente e remove se presente');   // 🧑‍💻 aluno
+  it.todo('6. o ♥ alterna favoritar/desfavoritar (toggle)');   // 🧑‍💻 aluno
 });

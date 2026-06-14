@@ -22,21 +22,21 @@ const s = () => useCounterStore.getState();
 // Os 3 são FÁCEIS: a ação já está escrita — complete só o expect (começam vermelhos → verde).
 
 describe('counterStore', () => {
-  it('1. increment soma 1 ao count', () => {   // 🧑‍💻 aluno
+  it('1. incrementar soma 1 ao contador (increment)', () => {   // 🧑‍💻 aluno
     // Act
     s().increment();
     // Assert — complete:
     expect(s().count).toBe(/* TODO */);
   });
 
-  it('2. decrement subtrai 1 do count', () => {   // 🧑‍💻 aluno
+  it('2. decrementar subtrai 1 do contador (decrement)', () => {   // 🧑‍💻 aluno
     // Act
     s().decrement();
     // Assert — complete:
     expect(s().count).toBe(/* TODO */);
   });
 
-  it('3. reset volta o count pra 0', () => {   // 🧑‍💻 aluno
+  it('3. resetar volta o contador a 0 (reset)', () => {   // 🧑‍💻 aluno
     // Arrange
     s().increment();
     s().increment();

@@ -21,6 +21,6 @@ beforeEach(() => {
 });
 
 describe('fetchPopularMovies', () => {
-  it.todo('1. chama /movie/popular com a page informada');   // 🧑‍💻 aluno
-  it.todo('2. devolve o data da resposta');   // 🧑‍💻 aluno
+  it.todo('1. busca os filmes populares da página pedida (/movie/popular)');   // 🧑‍💻 aluno
+  it.todo('2. devolve os filmes recebidos da API (data)');   // 🧑‍💻 aluno
 });

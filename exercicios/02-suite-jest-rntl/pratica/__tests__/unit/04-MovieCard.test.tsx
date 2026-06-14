@@ -36,12 +36,12 @@ beforeEach(() => mockNavigate.mockClear());
 
 describe('MovieCard', () => {
   // Dica: depois do render → expect(screen.getByText('Matrix')).toBeTruthy();
-  it.todo('1. renderiza o título do filme');   // 🧑‍🏫 em aula
+  it.todo('1. o card mostra o título do filme');   // 🧑‍🏫 em aula
 
   // Dica: a nota aparece como '⭐ 8.7' (vote_average.toFixed(1)) → screen.getByText('⭐ 8.7').
-  it.todo('2. renderiza a nota (⭐ 8.7)');   // 🧑‍💻 aluno
+  it.todo('2. o card mostra a nota (⭐ 8.7)');   // 🧑‍💻 aluno
 
   // Dica: fireEvent.press(screen.getByText('Matrix'));
   //   expect(mockNavigate).toHaveBeenCalledWith('Detail', { id: 42, title: 'Matrix' });
-  it.todo('3. navega pro detalhe ao tocar no card');   // 🧑‍💻 aluno
+  it.todo('3. tocar no card abre a tela de detalhe (navigate)');   // 🧑‍💻 aluno
 });

@@ -48,5 +48,5 @@ beforeEach(() => {
 });
 
 describe('Navegação (integração)', () => {
-  it.todo('1. tap no card de Matrix navega pra tela de detalhe');   // 🧑‍💻 aluno
+  it.todo('1. tocar no filme abre a tela de detalhe');   // 🧑‍💻 aluno
 });

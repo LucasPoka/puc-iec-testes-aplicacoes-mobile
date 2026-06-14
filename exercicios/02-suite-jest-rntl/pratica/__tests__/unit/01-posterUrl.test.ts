@@ -7,15 +7,15 @@
 import { posterUrl } from '@/utils/poster-url';
 
 describe('posterUrl', () => {
-  it('1. monta URL completa com size default w342', () => {
+  it('1. monta a URL completa da capa (size padrão w342)', () => {
     expect(posterUrl('/abc.jpg')).toBe('https://image.tmdb.org/t/p/w342/abc.jpg');
   });
 
-  it('2. respeita o size informado', () => {
+  it('2. usa o tamanho que eu pedir (w500)', () => {
     expect(posterUrl('/abc.jpg', 'w500')).toBe('https://image.tmdb.org/t/p/w500/abc.jpg');
   });
 
-  it('3. retorna null quando path é null', () => {
+  it('3. filme sem capa retorna null', () => {
     expect(posterUrl(null)).toBeNull();
   });
 });

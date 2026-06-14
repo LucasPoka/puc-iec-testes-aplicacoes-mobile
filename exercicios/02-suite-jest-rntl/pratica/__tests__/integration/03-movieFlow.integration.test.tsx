@@ -59,10 +59,10 @@ beforeEach(() => {
 
 describe('Fluxo de integração — lista + favoritos (ENTREGA Parte B)', () => {
   // render(renderApp()); depois findByText de 'Matrix' e 'Inception'.
-  it.todo('1. exibe a lista de filmes retornada pela API mockada');   // 🧑‍🏫 em aula
+  it.todo('1. a lista de filmes aparece na tela');   // 🧑‍🏫 em aula
 
   // após carregar, contador começa em '0'; press no heart-1 → '1'.
-  it.todo('2. favoritar um card incrementa o contador do header (♥ 1)');   // 🧑‍💻 aluno
+  it.todo('2. favoritar um filme soma no contador do topo (♥ 1)');   // 🧑‍💻 aluno
 
   // favoritar e depois desfavoritar o mesmo card → contador volta a '0'.
   it.todo('3. desfavoritar volta o contador a 0');   // 🧑‍💻 aluno
